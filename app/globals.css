@@ -1,26 +1,107 @@
 @import "tailwindcss";
+@import "@neondatabase/auth/ui/css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
+    /* Design System extraído do Manna App via Chrome DevTools */
+
+    /* Cores principais */
+    --background: #FDFCF7;
+    --background-alt: #F9F5EB;
+    --foreground: #333333;
+    --foreground-muted: rgba(51, 51, 51, 0.6);
+
+    /* Primary (Azul) */
+    --primary: #1CB0F6;
+    --primary-hover: #00B0F7;
+    --primary-foreground: #FFFFFF;
+
+    /* Secondary */
+    --secondary: #FFFFFF;
+    --secondary-foreground: #333333;
+
+    /* Accent (Amarelo) */
+    --accent: #FEC800;
+    --accent-foreground: #333333;
+
+    /* Borders & Inputs */
+    --border: #EBE9DD;
+    --input: #EBE9DD;
+    --ring: #1CB0F6;
+
+    /* Utility colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+
+    /* Outros */
+    --radius: 14.4px;
+  }
+
+  .dark {
+    --background: #1a1a1a;
+    --background-alt: #2a2a2a;
     --foreground: #ededed;
+    --foreground-muted: rgba(237, 237, 237, 0.6);
+
+    --primary: #1CB0F6;
+    --primary-hover: #00B0F7;
+    --primary-foreground: #FFFFFF;
+
+    --secondary: #2a2a2a;
+    --secondary-foreground: #ededed;
+
+    --accent: #FEC800;
+    --accent-foreground: #1a1a1a;
+
+    --border: #3a3a3a;
+    --input: #3a3a3a;
+    --ring: #1CB0F6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: var(--foreground);
+  }
+
+  h1 {
+    font-size: 2.43rem; /* 38.88px */
+    line-height: 1.185;
+  }
+
+  h2 {
+    font-size: 1.53rem; /* 24.48px */
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-gradient-warm {
+    background: linear-gradient(180deg, #FDFCF7 0%, #F9F5EB 100%);
+  }
+
+  .text-muted {
+    color: var(--foreground-muted);
+  }
 }
