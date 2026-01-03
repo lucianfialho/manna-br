@@ -39,7 +39,7 @@ const mockLessons = [
 
 export default function LicoesPage() {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-black pb-20">
       {/* Stats Header */}
       <StatsHeader streak={1} points={210} hearts={0} />
 
