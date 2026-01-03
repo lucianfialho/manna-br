@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-// import { NeonAuthUIProvider } from "@neondatabase/auth/react";
-// import { authClient } from "@/lib/auth/client";
+import { AuthProvider } from "@/components/auth-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -41,10 +40,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* TODO: Configurar Neon Auth quando tiver as credenciais */}
-        {/* <NeonAuthUIProvider authClient={authClient}> */}
-        {children}
-        {/* </NeonAuthUIProvider> */}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
